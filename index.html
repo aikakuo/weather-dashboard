@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font awesome-->
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+    <h1>Weather Dashboard</h1>
+</header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="search-for">
+                    <form class="example" action="https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=">
+                        <h2>Search for a city</h2>
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                      <table class="city-list">
+                          <tr>
+                              <th id="city-name-one">city</th>
+                          </tr>
+                          <tr>
+                              <th id="city-name-two">city</th>
+                          </tr>
+                          <tr>
+                              <th id="city-name-three">city</th>
+                          </tr>
+                          <tr>
+                            <th id="city-name-four">city</th>
+                        </tr>
+                        <tr>
+                            <th id="city-name-five">city</th>
+                        </tr>
+                        <tr>
+                            <th id="city-name-six">city</th>
+                        </tr>
+                        <tr>
+                            <th id="city-name-seven">city</th>
+                        </tr>
+                      </table>
+
+
+            </div>
+            </div>
+            <div class="col-md-9">
+
+                <div class="city"></div>
+                <div class="wind"></div>
+                <div class="humidity"></div>
+                <div class="temp"></div>
+            </div>
+
+
+
+
+
+
+          </div>
+    </div>
+    <!-- <div class="row">
+        <div class="column">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda debitis nostrum tempore quisquam aut quos aspernatur porro officia amet inventore, nihil magni explicabo delectus blanditiis atque itaque impedit non. Minima!</div>
+        <div class="column">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit dolore, facilis repellendus eligendi quisquam modi maxime ipsum praesentium autem tempore suscipit reiciendis repellat magnam eius, ut corrupti impedit nesciunt inventore?</div>
+        <div class="column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptatem corrupti itaque quo minima ab, a officia dolorum, molestiae, impedit animi. Odio voluptates, consequuntur aliquid voluptas amet porro tenetur quas.</div>
+        <div class="column">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda totam similique expedita hic harum quod facere quisquam, vitae maxime voluptatum dolore sunt suscipit eius! Maxime dolore nostrum possimus culpa ex!</div>
+        <div class="column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint inventore atque temporibus in amet aut molestias suscipit, aliquam possimus odio asperiores illum incidunt delectus voluptatem dicta eius eum voluptatibus.
+            
+        </div>
+        
+        </div> -->
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Things to accomplish:
+    // Get an API Key from OpenWeatherMap API
+
+    var apiKey = '699f393b4aad76cc5254ad755fc812a2'
+    // Create an AJAX call to retrieve data Log the data in console
+    var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=' + apiKey + '&units=imperial'
+  
+    $.ajax({
+      url: queryURL,
+     method: 'GET',
+
+    }).then(function(weatherData){
+      console.log(weatherData)
+     
+      $('.city').text('City: ' + weatherData.name)
+      $('.wind').text('Wind Speed: ' + weatherData.wind.speed)
+      $('.humidity').text('Humidity: ' + weatherData.main.humidity)
+      $('.temp').text('Temp: ' + weatherData.main.temp)
+    })
+    // Log the data in HTML
+    // Scream Ushindi (victory in Swahili)! at the top of your lungs
+  </script>
+
+</body>
+</html>
