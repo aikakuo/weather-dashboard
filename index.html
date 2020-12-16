@@ -16,33 +16,14 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="search-for">
-                    <form class="example" action="https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=">
-                        <h2>Search for a city</h2>
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                      </form>
+                   <h2>Search for a city</h2>
+                        <input type="text" placeholder="Search.." class="input-value">
+                        <button id="button" type="submit" value="submit"><i class="fa fa-search"></i></button>
+                     
                       <table class="city-list">
                           <tr>
-                              <th id="city-name-one">city</th>
+                              <th id="city-name-one"></th>
                           </tr>
-                          <tr>
-                              <th id="city-name-two">city</th>
-                          </tr>
-                          <tr>
-                              <th id="city-name-three">city</th>
-                          </tr>
-                          <tr>
-                            <th id="city-name-four">city</th>
-                        </tr>
-                        <tr>
-                            <th id="city-name-five">city</th>
-                        </tr>
-                        <tr>
-                            <th id="city-name-six">city</th>
-                        </tr>
-                        <tr>
-                            <th id="city-name-seven">city</th>
-                        </tr>
                       </table>
 
 
@@ -63,43 +44,40 @@
 
           </div>
     </div>
-    <!-- <div class="row">
-        <div class="column">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda debitis nostrum tempore quisquam aut quos aspernatur porro officia amet inventore, nihil magni explicabo delectus blanditiis atque itaque impedit non. Minima!</div>
-        <div class="column">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit dolore, facilis repellendus eligendi quisquam modi maxime ipsum praesentium autem tempore suscipit reiciendis repellat magnam eius, ut corrupti impedit nesciunt inventore?</div>
-        <div class="column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptatem corrupti itaque quo minima ab, a officia dolorum, molestiae, impedit animi. Odio voluptates, consequuntur aliquid voluptas amet porro tenetur quas.</div>
-        <div class="column">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda totam similique expedita hic harum quod facere quisquam, vitae maxime voluptatum dolore sunt suscipit eius! Maxime dolore nostrum possimus culpa ex!</div>
-        <div class="column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sint inventore atque temporibus in amet aut molestias suscipit, aliquam possimus odio asperiores illum incidunt delectus voluptatem dicta eius eum voluptatibus.
-            
-        </div>
-        
-        </div> -->
+  
 </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    // Things to accomplish:
-    // Get an API Key from OpenWeatherMap API
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
 
-    var apiKey = '699f393b4aad76cc5254ad755fc812a2'
-    // Create an AJAX call to retrieve data Log the data in console
-    var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=' + apiKey + '&units=imperial'
-  
+var inputValue = document.querySelector(".input-value")
+
+  var apiKey = 'a7e7a712564377e453883cf311865a0a'
+  var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +inputValue.value+'&appid=' + apiKey + '&units=imperial'
+
+
+  $('#button').on('click',function(){
+
     $.ajax({
-      url: queryURL,
-     method: 'GET',
+    url: queryURL,
+   method: 'GET',
 
-    }).then(function(weatherData){
-      console.log(weatherData)
-     
-      $('.city').text('City: ' + weatherData.name)
-      $('.wind').text('Wind Speed: ' + weatherData.wind.speed)
-      $('.humidity').text('Humidity: ' + weatherData.main.humidity)
-      $('.temp').text('Temp: ' + weatherData.main.temp)
-    })
-    // Log the data in HTML
-    // Scream Ushindi (victory in Swahili)! at the top of your lungs
-  </script>
+  }).then(function(weatherData){
+    console.log(weatherData)
+   
+    $('.city').text('City: ' + weatherData.name)
+    $('.wind').text('Wind Speed: ' + weatherData.wind.speed)
+    $('.humidity').text('Humidity: ' + weatherData.main.humidity)
+    $('.temp').text('Temp: ' + weatherData.main.temp)
+  })
+
+
+
+  })
+  
+
+</script>
 
 </body>
 </html>
