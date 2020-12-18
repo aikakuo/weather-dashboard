@@ -1,5 +1,11 @@
 var inputValue = document.querySelector(".input-value")
 
+
+
+var date = (new Date()).toISOString().split('T')[0];
+
+
+
   var apiKey = '1b4f8b955a88a2ead047909c85a25270'
  
 
@@ -13,8 +19,8 @@ var inputValue = document.querySelector(".input-value")
 
   }).then(function(weatherData){
     console.log(weatherData)
-   
-    $('.city').text('City: ' + weatherData.name)
+    // $(".date").text(today);
+    $('.city').text('City: ' + weatherData.name + '  ' + date)
     $('.wind').text('Wind Speed: ' + weatherData.wind.speed)
     $('.humidity').text('Humidity: ' + weatherData.main.humidity)
     $('.temp').text('Temp: ' + weatherData.main.temp + " C")
