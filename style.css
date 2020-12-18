@@ -1,53 +1,62 @@
 .container {
-  border: 3rem;
-  border-color: aqua;
-  width: auto;
-  padding: 70px;
-  margin: 20px;
-}
-
-.col-md-3 {
-    align-items: flex-start;
-    padding-right: 30px;
-}
-
-.col-md-9 {
-    padding-left: 60px;
-    border-color: blue;
-    border-width: 15px;
-    border-style: double;
-    height: 12rem;
-    width: 600px;
-    text-align: center;
-}
-
-.column {
-   
-    background: blue;
-    padding: 10px;
-    margin: 0%;
-    width: 600px;
-}
-
-
-
-.row {
-    display: flex;
-}
-
-h1 {
-    text-align: center;
-    background: grey;
-    margin: 0;
-    padding: 2rem;
+    border: 3rem;
+    border-color: aqua;
     width: auto;
+    padding: 90px;
+    margin: 20px;
+  }
+  
+  .col-md-3 {
+      align-items: flex-start;
+      padding-right: 30px;
+  }
+  
+  .col-md-9 {
+      padding-left: 60px;
+      border-color: blue;
+      border-width: 2px;
+      border-style: solid;
+      height: 12rem;
+      width: 600px;
+      text-align: center;
+      border-radius: 10px;
+  }
+  
+  .column {
+     
+      background: blue;
+      padding: 10px;
+      margin: 0%;
+      width: 600px;
+  }
+  
+  
+  
+  .row {
+      display: flex;
+  }
+  
+  h1 {
+      text-align: center;
+      background: grey;
+      margin: 0;
+      padding: 2rem;
+      width: auto;
+  }
+  
+  .city-list {
+      background: chocolate;
+      margin: 0;
+      padding: 5px;
+      font-size: 24px;
+      width: 100%;
+  
+  }
+
+  .hide {
+    display: none;
 }
 
-.city-list {
-    background: chocolate;
-    margin: 0;
-    padding: 5px;
-    font-size: 24px;
-    width: 100%;
-
+.show {
+    display: block;
 }

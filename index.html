@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--font awesome-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--bootstrap-->
     <link rel="stylesheet" href="style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>
+<header>
     <h1>Weather Dashboard</h1>
 </header>
     <div class="container">
@@ -35,49 +38,43 @@
                 <div class="wind"></div>
                 <div class="humidity"></div>
                 <div class="temp"></div>
+                <div class="lat"></div>
+                <div class="lon"></div>
             </div>
-
-
-
-
-
-
           </div>
-    </div>
+
+          <div class="card"> 
+            <ul class="list-group list-group-flush list">
+            </ul>
+        </div> 
+     
+    </div> 
+   
+    <div class="col-lg-9"> 
+        <div id="currentCity" class="mt-4">
+            
+        </div>
+    </div> 
   
-</div>
+</div> 
+
+<div class="mt-4 col-md-12"> 
+
+    <h5 id="forecastH5" class="mt-3 hide">5-Day Forecast:</h5>
+
+    <div id="forecast" class="row"> 
+
+
+    </div> 
+
+     </div>
+  </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-var inputValue = document.querySelector(".input-value")
-
-  var apiKey = 'a7e7a712564377e453883cf311865a0a'
-  var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +inputValue.value+'&appid=' + apiKey + '&units=imperial'
-
-
-  $('#button').on('click',function(){
-
-    $.ajax({
-    url: queryURL,
-   method: 'GET',
-
-  }).then(function(weatherData){
-    console.log(weatherData)
-   
-    $('.city').text('City: ' + weatherData.name)
-    $('.wind').text('Wind Speed: ' + weatherData.wind.speed)
-    $('.humidity').text('Humidity: ' + weatherData.main.humidity)
-    $('.temp').text('Temp: ' + weatherData.main.temp)
-  })
-
-
-
-  })
-  
-
-</script>
+<script src="js.js"></script>
 
 </body>
 </html>
+
+
